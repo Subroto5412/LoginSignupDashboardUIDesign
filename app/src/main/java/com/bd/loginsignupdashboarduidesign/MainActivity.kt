@@ -17,8 +17,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -57,8 +59,9 @@ class MainActivity : ComponentActivity() {
     {
         Column(
             Modifier.fillMaxHeight().fillMaxWidth()
+                .verticalScroll(rememberScrollState())
                 .background(color = Color(android.graphics.Color.parseColor("#f8eeec"))),
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         )
         {
             ConstraintLayout {
@@ -282,6 +285,183 @@ class MainActivity : ComponentActivity() {
                             start.linkTo(text1.start)
                         }
                 )
+            }
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 16.dp, end = 16.dp, top = 24.dp)
+            ) {
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_1), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "Inbox",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                        )
+
+                }
+
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_2), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "Maps",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                    )
+
+                }
+
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_3), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "Chats",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                    )
+
+                }
+
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_4), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "Report",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                    )
+
+                }
+
+            }
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 16.dp, end = 16.dp, top = 24.dp, bottom = 50.dp)
+            ) {
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_5), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "Calender",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                    )
+
+                }
+
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_6), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "Tips",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                    )
+
+                }
+
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_7), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "Settings",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                    )
+
+                }
+
+                Column(
+                    modifier = Modifier.weight(.25f),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Image(
+                        painter = painterResource(R.drawable.ic_8), contentDescription = null,
+                        modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
+                            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+                            .padding(16.dp)
+                    )
+
+                    Text(text = "More",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = Color(android.graphics.Color.parseColor("#2e3d6d"))
+                    )
+
+                }
+
             }
         }
     }
