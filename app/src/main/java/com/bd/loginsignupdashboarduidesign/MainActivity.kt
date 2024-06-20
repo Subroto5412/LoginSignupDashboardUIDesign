@@ -232,6 +232,57 @@ class MainActivity : ComponentActivity() {
                         .shadow(3.dp, shape = RoundedCornerShape(50.dp))
                         .background(Color.White, CircleShape)
                     )
+
+            ConstraintLayout(modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 24.dp, end  =  24.dp, start = 24.dp)
+                .shadow(3.dp, shape = RoundedCornerShape(25.dp))
+                .height(145.dp)
+                .background(
+                    brush = Brush.horizontalGradient(
+                        colors = listOf(
+                            Color(android.graphics.Color.parseColor("#4c6184")),
+                            Color(android.graphics.Color.parseColor("#f9c177")),
+                        )
+                    ), shape = RoundedCornerShape(25.dp)
+                )
+            )
+            {
+                val (img, text1, text2)  =  createRefs()
+                Image(
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = null,
+                    modifier = Modifier.constrainAs(img) {
+                        top.linkTo(parent.top)
+                        end.linkTo(parent.end)
+                        bottom.linkTo(parent.bottom)
+                    },
+                )
+                Text(text = "To Get Unlimited",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    modifier = Modifier
+                        .padding(top = 32.dp)
+                        .constrainAs(text1){
+                            top.linkTo(parent.top)
+                            end.linkTo(img.start)
+                            start.linkTo(parent.start)
+                        }
+                )
+                Text(text = "Upgrade Your Account",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                        .constrainAs(text2){
+                            top.linkTo(text1.top)
+                            end.linkTo(text1.end)
+                            start.linkTo(text1.start)
+                        }
+                )
+            }
         }
     }
 }
