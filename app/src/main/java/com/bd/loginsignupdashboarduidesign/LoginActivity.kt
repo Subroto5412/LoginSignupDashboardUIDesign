@@ -37,6 +37,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -204,6 +205,15 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             }
+            Text(text = "Are you new user? Register",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.SemiBold,
+                modifier = Modifier
+                    .padding(top  = 12.dp)
+                    .fillMaxWidth(),
+                textAlign = TextAlign.Center,
+                color = Color(android.graphics.Color.parseColor("#3b608c"))
+                )
         }
     }
 }
