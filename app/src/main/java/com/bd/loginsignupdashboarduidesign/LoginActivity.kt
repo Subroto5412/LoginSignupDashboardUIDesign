@@ -94,7 +94,6 @@ class LoginActivity : AppCompatActivity() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 16.dp, end = 24.dp, start = 24.dp)
-                    //  .shadow(3.dp, shape = RoundedCornerShape(50.dp))
                     .background(Color.White, CircleShape)
             )
 
@@ -122,7 +121,6 @@ class LoginActivity : AppCompatActivity() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 16.dp, end = 24.dp, start = 24.dp)
-                    //  .shadow(3.dp, shape = RoundedCornerShape(50.dp))
                     .background(Color.White, CircleShape)
             )
             Image(painter = painterResource(R.drawable.btn_arraw1), contentDescription = null,
